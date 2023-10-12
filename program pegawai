@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class ProgramPegawai {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Masukkan nama pegawai: ");
+        String nama = scanner.nextLine();
+        System.out.print("Masukkan departemen (Produksi/Marketing/Inventory): ");
+        String departemen = scanner.nextLine();
+        System.out.print("Masukkan pengalaman kerja (dalam tahun): ");
+        double pengalamanKerja = scanner.nextDouble();
+
+        double gaji = 0;
+
+        if (pengalamanKerja < 1) {
+            gaji = 3000000;
+        } else if (pengalamanKerja >= 1 && pengalamanKerja <= 2) {
+            gaji = 4000000;
+        } else {
+            gaji = 5000000;
+        }
+
+        System.out.println("\nInformasi Pegawai:");
+        System.out.println("Nama Pegawai: " + nama);
+        System.out.println("Departemen: " + departemen);
+
+        if (departemen.equalsIgnoreCase("Produksi") ||
+                departemen.equalsIgnoreCase("Marketing") ||
+                departemen.equalsIgnoreCase("Inventory")) {
+            System.out.println("Gaji Pegawai: " + gaji);
+        } else {
+            System.out.println("Departemen tidak valid. Silakan masukkan departemen yang valid.");
+        }
+
+        scanner.close();
+    }
+}
